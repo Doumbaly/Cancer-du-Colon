@@ -1,2 +1,2 @@
 # Cancer_colon
-mes code ave le language
+#Le code est dans le fichier pdf car j'ai utilié le package Knitr de R pour la creation de mon document.#
