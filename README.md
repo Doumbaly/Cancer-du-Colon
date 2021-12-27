@@ -1,5 +1,4 @@
 # Cancer_colon
-#Le code est dans le fichier pdf car j'ai utilisé le package Knitr de R pour la creation de mon document.#
 
 Dans ce présent rapport nous disposons d’un jeu de données contenant 1041 individus et 
 1600 variables (Longueur d’onde). 
