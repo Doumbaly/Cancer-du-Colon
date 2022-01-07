@@ -72,23 +72,6 @@ reg=as.matrice(lm(m1~x1+x2+x3,data=p1))
 
 #Nous retenons ARNOJ1.3
 
-#patient 2
-p2=dff[10:12,]
-p2
-m2=mean(p2)
-m2
-x4=m2-p2[1,]
-x4
-x5=m2-p2[2,]
-x5
-x6=m2-p2[3,]
-x6
-par(mfrow=c(4,1))
-plot(x4)
-plot(x5)
-plot(x6)
-plot(m2)
-
 #patient3,premiere visite
 p3=dff[19:21,]
 p3
@@ -106,76 +89,10 @@ plot(x8)
 plot(x9)
 plot(m3)
 
-#patient4,premiere visite
-p4=dff[28:30,]
-m4=mean(p4)
-#patient5,premiere visite
-p5=dff[37:39,]
-m5=mean(p5)
-#patient6,premiere visite
-p6=dff[46:48,]
-m6=mean(p6)
-#patient7,premiere visite
-p7=dff[55:57,]
-m7=mean(p7)
-#patient8,premiere visite
-p8=dff[64:66,]
-m8=mean(p8)
-#patient9,premiere visite
-p9=dff[73:75,]
-m9=mean(p9)
-#patient10,premiere visite
-p10=dff[82:84,]
-m10=mean(p10)
-#patient11,premiere visite
-p11=dff[91:93,]
-m11=mean(p11)
-#patient12,premiere visite
-p12=dff[101:103,]
-m12=mean(p12)
-#patient13,premiere visite
-p13=dff[110:112,]
-m13=mean(p13)
-#patient14,premiere visite
-p14=dff[119:121,]
-m14=mean(p14)
-#patient15,premiere visite
-p15=dff[128:130,]
-m15=mean(p15)
-#patient16,premiere visite
-p16=dff[137:139,]
-m16=mean(p16)
-#patient17,premiere visite
-p17=dff[146:148,]
-m17=mean(p17)
-#patient18,premiere visite
-p18=dff[155:157,]
-m18=mean(p18)
-#patient19,premiere visite
-p19=dff[166:169,]
-m19=mean(p19)
-#patient20,premiere visite
-p20=dff[176:178,]
-m20=mean(p20)
-#patient21,premiere visite
-p21=dff[185:187,]
-m21=mean(p21)
-#patient22,premiere visite
-p22=dff[194:196,]
-m22=mean(p22)
-#patient23,premiere visite
-p23=dff[203:205,]
-m23=mean(p23)
 
-newb=c(m1,m2,m3,m4,m5,m6,m7,m8,m9,m10,m11,m12,m13,m14,m15,m16,m17,m18,m19
-,m20,m21,m22,m23,m24,m25,m26,m27,m28,m29,m30,m31,m32,m33,m34,m35,m36,m37,m38,m39,m40,m41,m42
-,m43,m44,m45,m46,m47,m48,m49,m50,m51,m52,m53,m54,m55,m56,m57,m58,m59,m60,m61,m62,m63,m64,m65,m66
-,m67,m68,m69,m70,m71,m72,m73,m74,m75,m76,m77,m78,m79,m80,m81,m82,m83,m84,m85,m86,m87,m88,m89,m90,m91
-,m92,m93,m94,m95,m96,m97,m98,m99,m100,m101,m102,m103,m104,m105,m106,m107,m108,m109,m110)
+#create_newb
 
 #Nous avons retenu la moyenne spectrales:
-
-
 
 moy<-read_excel("C:/Users/doums/Desktop/cours Vannes/Lardjane/projet_tutore/moy_patien.xlsx")
 moy1=moy[,-1]
@@ -232,7 +149,7 @@ plot(1:k.max, wss,
 #groupes.kmeans <-kmeans(tr1.cr,centers=3,nstart=5)
 #print(groupes.kmeans)
 #print(table(groupes.cah,groupes.kmeans$cluster))
-##Proportion d’inertie expliquée par la partition : 55%
+##Proportion dâ€™inertie expliquÃ©e par la partition : 55%
 #Certe si nous prenons un k=4 la proportion d'inertie expliquee par la partition augmente,mais cela ne veut rien dire car le deuxieme groupe sera compose que de deux patients
 
 kmean=kmeans(spec_moy1,center=4)
@@ -279,16 +196,16 @@ plot(A)
 
 
 
-SpcDf <- 1/112^spec_moy1$spc#conversion en réflectance
+SpcDf <- 1/112^spec_moy1$spc#conversion en rÃ©flectance
 opar <- par(no.readonly = TRUE)
 par(mfrow=c(2,1),mar=c(4,4,2,2))
-matplot(as.numeric(colnames(SpcDf)),t(SpcDf[1:112,]),type='l',xlab='',ylab='la réflectance')
+matplot(as.numeric(colnames(SpcDf)),t(SpcDf[1:112,]),type='l',xlab='',ylab='la rÃ©flectance')
 mtext('Lignes spectra')
 
-DV2 <- savitzkyGolay(X = SpcDf,2,3,11,delta.wav=2)#Dérivée seconde.
+DV2 <- savitzkyGolay(X = SpcDf,2,3,11,delta.wav=2)#DÃ©rivÃ©e seconde.
 
-matplot(as.numeric(colnames(DV2)),t(DV2[1:112,]),type='l',xlab='Wavelength /nm',ylab='Dérivée seconde')
-mtext( 'dérivée seconde du  spectra')
+matplot(as.numeric(colnames(DV2)),t(DV2[1:112,]),type='l',xlab='Wavelength /nm',ylab='DÃ©rivÃ©e seconde')
+mtext( 'dÃ©rivÃ©e seconde du  spectra')
 
 
 ##SERUM pour chaque patients##
